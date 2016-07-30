@@ -1,0 +1,41 @@
+<%= form_for(@clothing) do |f| %>
+  <% if @clothing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@clothing.errors.count, "error") %> prohibited this clothing from being saved:</h2>
+
+      <ul>
+      <% @clothing.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.text_field :category %>
+  </div>
+  <div class="field">
+    <%= f.label :style %><br>
+    <%= f.text_field :style %>
+  </div>
+  <div class="field">
+    <%= f.label :brand %><br>
+    <%= f.text_field :brand %>
+  </div>
+  <div class="field">
+    <%= f.label :color %><br>
+    <%= f.text_field :color %>
+  </div>
+  <div class="field">
+    <%= f.label :seasons %><br>
+    <%= f.text_field :seasons %>
+  </div>
+  <div class="field">
+    <%= f.label :work_approp %><br>
+    <%= f.check_box :work_approp %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category: MyString
+  style: MyString
+  brand: MyString
+  color: MyString
+  season: MyString
+  work_approp: false
+
+two:
+  category: MyString
+  style: MyString
+  brand: MyString
+  color: MyString
+  season: MyString
+  work_approp: false
