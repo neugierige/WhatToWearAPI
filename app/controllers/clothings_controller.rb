@@ -1,5 +1,10 @@
 class ClothingsController < ApplicationController
   before_action :set_clothing, only: [:show, :edit, :update, :destroy]
+  # protect_from_forgery with: :null_session
+  # skip_before_action :verify_authenticity_token, only: [:create]
+  skip_before_action :verify_authenticity_token, if: :json_request?
+  
+
 
   # GET /clothings
   # GET /clothings.json
@@ -24,6 +29,7 @@ class ClothingsController < ApplicationController
   # POST /clothings
   # POST /clothings.json
   def create
+    logger.info request.env
     @clothing = Clothing.new(clothing_params)
 
     respond_to do |format|
@@ -61,6 +67,19 @@ class ClothingsController < ApplicationController
     end
   end
 
+  def tops 
+    @all_tops = Clothing.where #{ category:"top" }
+
+  end
+
+
+  protected
+
+  def json_request? 
+    request.format.json?
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_clothing
@@ -71,4 +90,5 @@ class ClothingsController < ApplicationController
     def clothing_params
       params.require(:clothing).permit(:category, :style, :brand, :color, :seasons, :work_approp)
     end
+
 end
