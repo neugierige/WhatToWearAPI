@@ -67,11 +67,14 @@ class ClothingsController < ApplicationController
     end
   end
 
-  def tops 
-    @all_tops = Clothing.where #{ category:"top" }
-
+  def self.tops 
+    # where(category: "top")
+    puts "hi"
   end
 
+  def self.bottoms 
+    Clothing.where(:category = "bottom")
+  end
 
   protected
 
