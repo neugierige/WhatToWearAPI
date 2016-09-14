@@ -66,7 +66,7 @@ class ClothingsController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
 
   protected
 
@@ -83,7 +83,7 @@ class ClothingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def clothing_params
-      params.require(:clothing).permit(:category, :style, :brand, :color, :seasons, :work_approp)
+      params.require(:clothing).permit(:category, :style, :brand, :color, :seasons, :work_approp, :layerable)
     end
 
 end
