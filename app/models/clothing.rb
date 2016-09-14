@@ -1,3 +1,5 @@
 class Clothing < ActiveRecord::Base
-	scope :top, -> { where(category: 'top') }
+	scope :tops, -> { where(category: 'top') }
+	scope :bottoms, -> { where(category: 'bottom') }
+	scope :onepiece, -> { where(category: 'onepiece') }
 end
