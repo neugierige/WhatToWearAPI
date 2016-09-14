@@ -66,15 +66,7 @@ class ClothingsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
-  def self.tops 
-    # where(category: "top")
-    puts "hi"
-  end
-
-  def self.bottoms 
-    Clothing.where(:category = "bottom")
-  end
+  
 
   protected
 
